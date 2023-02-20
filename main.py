@@ -1,16 +1,17 @@
-# This is a sample Python script.
+import PyQt5
+from PyQt5 import QtWidgets
+from qtwidgets import AnimatedToggle
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+toggle_2 = AnimatedToggle(
+    checked_color="#FFB000",
+    pulse_checked_color="#44FFB000"
+)
+
+container = QtWidgets.QWidget()
+layout = QtWidgets.QVBoxLayout()
+layout.addWidget(toggle_2)
+container.setLayout(layout)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+app = QtWidgets.QApplication([])
+app.exec_()
