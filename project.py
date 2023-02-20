@@ -2,17 +2,24 @@ import tkinter
 import tkinter as tk
 import cv2
 capture = cv2.VideoCapture(0)
-
+RELIEFS = [tk.SUNKEN, tk.RAISED, tk.GROOVE, tk.RIDGE, tk.FLAT]
 class App():
     def __init__(self, window, window_title):
 
 
         self.window = window
         self.window.title(window_title)
-        self.canvas = tkinter.Canvas(window, width=1400, height=900)
+        self.canvas = tkinter.Canvas(window, width=1200, height=900)
         self.canvas.pack()
-        self.btn = tkinter.Button(window,text= "Show me", width=50, command=self.show)
+        self.btn = tkinter.Button(window,text= "Show me", width=20, height=3, command=self.show)
         self.btn.pack (anchor=tkinter.CENTER, expand=True)
+        self.window.resizable(False,False)
+        self.btn.place(x=100,y=111)
+
+
+
+
+
         self.window.mainloop()
 
     def show(self):
